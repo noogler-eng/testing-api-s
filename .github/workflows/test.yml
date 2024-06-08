@@ -23,5 +23,5 @@ jobs:
         run: npm install && npx prisma generate
 
       - name: Run tests
-        working-directory: 5-express-vitest-prisma
+        working-directory: ./
         run: npm run test
