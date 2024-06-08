@@ -13,11 +13,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model sum{
+model calculation{
   id      Int @id @default(autoincrement())
   a       Int 
   b       Int
-  sum     Int
+  result  Int
+  type    requestType
+}
+
+enum requestType {
+  Sum
+  Multiply
 }
 
 // all the initial data will be lost from this database as new data will be added to the database

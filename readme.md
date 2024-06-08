@@ -22,3 +22,11 @@
 // npx prisma generate
 
 // never running typescript, only js
+
+
+// jest commands
+// 1. npm install --save-dev ts-jest  @jest/globals
+// 2. npx ts-jest config:init
+// 3. "scripts": {
+//      "test": "jest"
+//    }, 
