@@ -4,7 +4,7 @@ import request from "supertest";
 
 
 
-// 🤯
+// 🤯 what a symbol
 import { prisma } from '../__mocks__/db';
 
 // mocking the prismaclinet
