@@ -22,10 +22,21 @@ vi.mock('../db');
 describe("GET/ sum",()=>{
     it("test-1 it should return valid sum", async()=>{
         prisma.calculation.create.mockResolvedValue({ result: 2, id: 2, type: "Sum", a: 1, b: 1 })
+        
+        // spying function functionality how the prisma called with parameters
+        vi.spyOn(prisma.calculation, "create");
         const res = await request(app).get('/sum').send({
             a: 2,
             b: 1
         });
+        expect(prisma.calculation.create).toHaveBeenCalledWith({
+            data: {
+                a: 2,
+                b: 1,
+                type: "Sum",
+                result: 3
+            }
+        })
 
         expect(res.statusCode).toBe(200);
         expect(res.body.id).toBe(2);
